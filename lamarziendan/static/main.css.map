@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../home/jj/dev/lamarziendan/lamarziendan/static/main.css",
+	"sources": [
+		"../home/jj/dev/lamarziendan/lamarziendan/static/main.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,IAAI,GACjB;;AAED,AAAA,IAAI,CAAC;EACH,gBAAgB,EAPT,OAAO;EAQd,gBAAgB,EAAE,qBAAqB;EACvC,iBAAiB,EAAC,SAAS;EAC3B,mBAAmB,EAAE,MAAM;EAC3B,eAAe,EAAE,OAAO,GACzB"
+}

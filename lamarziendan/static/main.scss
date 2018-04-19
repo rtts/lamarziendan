@@ -1,0 +1,13 @@
+$yellow: #ffed75;
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: $yellow;
+  background-image: url(/static/logo.png);
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: contain;
+}
