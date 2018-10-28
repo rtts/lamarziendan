@@ -11,6 +11,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 @admin.register(Edition)
 class EditionAdmin(admin.ModelAdmin):
+    list_display = ['title', 'date']
     inlines = [PerformanceAdmin]
 
 @admin.register(Artist)

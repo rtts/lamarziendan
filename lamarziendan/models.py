@@ -46,7 +46,7 @@ class Performance(NumberedModel):
     number = models.PositiveIntegerField('nummer', blank=True)
     artist = models.ForeignKey(Artist, verbose_name='artiest', on_delete=models.CASCADE, related_name='performances')
     edition = models.ForeignKey(Edition, verbose_name='editie', on_delete=models.CASCADE, related_name='performances')
-    genre = models.ForeignKey(Genre, verbose_name='genre', on_delete=models.CASCADE, related_name='+')
+    genre = models.ForeignKey(Genre, verbose_name='genre', on_delete=models.CASCADE, related_name='+', blank=True, null=True)
 
     def __str__(self):
         return '{} op {}'.format(self.artist, self.edition)
