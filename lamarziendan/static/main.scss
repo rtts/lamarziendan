@@ -1,4 +1,6 @@
-$yellow: #ffed75;
+$yellow: #fdfbbf;
+$small: 500px;
+$medium: 800px;
 
 html {
   min-height: 100%;
@@ -6,8 +8,12 @@ html {
 
 body {
   background-color: $yellow;
-  background-image: url(/static/logo.png);
-  background-repeat:no-repeat;
+  background-image: url(/static/logo.svg);
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 50%;
+
+  @media(max-width: $small) {
+    background-size: 90%;
+  }
 }

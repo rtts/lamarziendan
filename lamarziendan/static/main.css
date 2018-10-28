@@ -2,10 +2,13 @@ html {
   min-height: 100%; }
 
 body {
-  background-color: #ffed75;
-  background-image: url(/static/logo.png);
+  background-color: #fdfbbf;
+  background-image: url(/static/logo.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; }
+  background-size: 50%; }
+  @media (max-width: 500px) {
+    body {
+      background-size: 90%; } }
 
 /*# sourceMappingURL=../../../../../../static/main.css.map */
