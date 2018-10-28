@@ -17,3 +17,4 @@ class EditionAdmin(admin.ModelAdmin):
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
     inlines = [PerformanceAdmin]
+    list_filter = ['performances__edition']
