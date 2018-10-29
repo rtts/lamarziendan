@@ -1,0 +1,89 @@
+html, body {
+  margin: 0;
+  padding: 2%; }
+
+body {
+  background-color: #fdfbbf;
+  background-size: 250px;
+  font-family: Bariol, sans-serif;
+  transition: 1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+main {
+  max-width: 1000px;
+  margin: auto; }
+
+header {
+  text-align: center; }
+  header img {
+    width: 300px;
+    max-width: 100%; }
+
+section.edition {
+  text-align: center; }
+  section.edition h1 {
+    letter-spacing: 3px;
+    font-size: 36px;
+    color: #343677;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+    padding: 0 80px;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    overflow-wrap: break-all; }
+    section.edition h1 span.shrunk {
+      display: inline-block;
+      transform: scale(0.8, 1); }
+    section.edition h1 a {
+      position: absolute;
+      top: 0; }
+      section.edition h1 a.previous {
+        left: 0; }
+      section.edition h1 a.next {
+        right: 0; }
+      section.edition h1 a img {
+        width: 80px; }
+  section.edition > img {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 7px solid #eb4072;
+    border-radius: 5px; }
+
+section.performances {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  margin-top: 10px; }
+  section.performances > div {
+    flex: 1 1 200px;
+    overflow: hidden; }
+    section.performances > div div.performance {
+      margin: 10px;
+      height: 300px;
+      background-color: white; }
+      section.performances > div div.performance div.image {
+        height: 200px;
+        background-position: center;
+        background-size: cover; }
+      section.performances > div div.performance div.title {
+        padding: 10px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #eb4072; }
+
+@font-face {
+  font-family: 'Bariol';
+  src: url("bariol_regular-webfont.eot");
+  src: url("bariol_regular-webfont.eot?#iefix") format("embedded-opentype"), url("bariol_regular-webfont.woff2") format("woff2"), url("bariol_regular-webfont.woff") format("woff"), url("bariol_regular-webfont.ttf") format("truetype"), url("bariol_regular-webfont.svg#bariolregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*# sourceMappingURL=../../../../../../static/main2.css.map */
