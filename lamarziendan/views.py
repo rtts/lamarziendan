@@ -20,7 +20,9 @@ class ArtistView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         artist = self.object
+        performances = artist.performances.order_by('edition__date')
         context.update({
             'artist': artist,
+            'performances': performances,
         })
         return context

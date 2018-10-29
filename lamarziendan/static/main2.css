@@ -16,6 +16,9 @@ main {
   max-width: 1000px;
   margin: auto; }
 
+div.spacer {
+  height: 50px; }
+
 header {
   text-align: center; }
   header img {

@@ -26,7 +26,7 @@
 
   <h1>te zien in:</h1>
 
-  {% for performance in artist.performances.all %}
+  {% for performance in performances %}
     {% with edition=performance.edition %}
       <a href="{{edition.get_absolute_url}}">
         <section class="edition">
@@ -38,6 +38,7 @@
           {% endif %}
         </section>
       </a>
+      <div class="spacer"></div>
     {% endwith %}
   {% endfor %}
 
