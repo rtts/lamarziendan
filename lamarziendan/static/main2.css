@@ -110,11 +110,16 @@ section.artist {
       margin-top: 40px;
       margin-bottom: 30px;
       overflow-wrap: break-word; }
-    section.artist > div img {
+    section.artist > div > img {
+      display: block;
       width: 100%;
       margin: 10px 0; }
+    section.artist > div img.portrait {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
     section.artist > div div.website {
-      margin: 22px;
+      margin: 30px;
       text-align: center; }
       section.artist > div div.website a {
         font-size: 22px;
@@ -163,6 +168,11 @@ section.performances {
           margin: 0;
           font-size: 18px;
           color: #343677; }
+
+section.participations h2 {
+  font-size: 36px; }
+  section.participations h2 a {
+    color: #343677; }
 
 @font-face {
   font-family: 'Bariol';

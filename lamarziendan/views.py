@@ -33,10 +33,10 @@ class TeamView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        team = self.object
-        participations = team.participations.order_by('edition__date')
+        team_member = self.object
+        participations = team_member.participations.order_by('edition__date')
         context.update({
-            'team': team,
+            'team_member': team_member,
             'participations': participations,
         })
         return context

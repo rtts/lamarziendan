@@ -46,6 +46,19 @@
     <div></div>
     <div></div>
   </section>
+
+  <div class="spacer"></div>
+
+  <h1 style="font-size: 36px">Deze editie werd mede mogelijk gemaakt door:</h1>
+
+  <section class="participations">
+    <h2>
+      {% for participation in edition.participations.all %}
+        <a href="{{participation.team_member.get_absolute_url}}">{{participation.team_member}}</a>{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    </h2>
+  </section>
+
 {% endblock %}
 
 {% block extrabody %}
