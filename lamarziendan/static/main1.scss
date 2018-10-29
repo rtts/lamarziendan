@@ -31,22 +31,33 @@ header {
 
 section.edition {
   text-align: center;
-  position: relative;
 
   h1 {
     letter-spacing: 3px;
     font-size: 36px;
     color: $blue;
-    transform: scale(0.8, 1);
     text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin: 30px 70px;
 
-    img {
-      vertical-align: top;
-      margin: 0 50px;
-      width: 80px;
+    span.shrunk {
+      display: inline-block;
+      transform: scale(0.8, 1);
     }
-    img.disabled {
-      opacity: 0;
+
+    a {
+      position: absolute;
+      top: 0;
+      &.previous {
+        left: -80px;
+      }
+      &.next {
+        right: -80px;
+      }
+      img {
+        width: 80px;
+      }
     }
   }
 

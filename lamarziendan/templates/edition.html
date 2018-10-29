@@ -6,19 +6,15 @@
     <h1>
       {% with edition=edition.get_previous_by_date %}
         {% if edition.slug %}
-          <a href="{{edition.get_absolute_url}}"><img src="{% static 'previous.svg' %}" alt="Vorige"></a>
-        {% else %}
-          <img class="disabled" src="{% static 'previous.svg' %}" alt="Vorige">
+          <a class="previous" href="{{edition.get_absolute_url}}"><img src="{% static 'previous.svg' %}" alt="Vorige"></a>
         {% endif %}
       {% endwith %}
 
-      {{edition.title}}
+      <span class="shrunk">{{edition.title}}</span>
 
       {% with edition=edition.get_next_by_date %}
         {% if edition.slug %}
-          <a href="{{edition.get_absolute_url}}"><img src="{% static 'next.svg' %}" alt="Volgende"></a>
-        {% else %}
-          <img class="disabled" src="{% static 'next.svg' %}" alt="Volgende">
+          <a class="next" href="{{edition.get_absolute_url}}"><img src="{% static 'next.svg' %}" alt="Volgende"></a>
         {% endif %}
       {% endwith %}
     </h1>
