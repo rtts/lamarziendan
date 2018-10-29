@@ -16,6 +16,16 @@ main {
   max-width: 1000px;
   margin: auto; }
 
+footer {
+  opacity: 0.5;
+  padding-top: 50px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  max-width: 1000px;
+  margin: auto; }
+
 div.spacer {
   height: 50px; }
 

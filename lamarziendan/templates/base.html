@@ -22,6 +22,20 @@
       {% endblock %}
     </main>
 
+    <footer>
+      <p>
+        Meer informatie of meedoen? Email naar <a href="mailto:info@lamarziendan.nl">info@lamarziendan.nl</a>
+      </p>
+
+      <p>
+        Copyright {% now "Y" %} Lamarziendan
+      </p>
+
+      <p>
+        <a href="{% url 'admin:index' %}">Lamarbeherendan</a>
+      </p>
+    </footer>
+
     {% block extrabody %}{% endblock %}
   </body>
 </html>
