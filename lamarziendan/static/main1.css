@@ -36,8 +36,7 @@ section.edition {
       transform: scale(0.8, 1); }
     section.edition h1 a {
       position: absolute;
-      top: 0;
-      bottom: 0; }
+      top: 0; }
       section.edition h1 a.previous {
         left: 0; }
       section.edition h1 a.next {
