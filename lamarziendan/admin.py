@@ -19,4 +19,4 @@ class EditionAdmin(admin.ModelAdmin):
 class ArtistAdmin(admin.ModelAdmin):
     inlines = [PerformanceAdmin]
     prepopulated_fields = {"slug": ("name",)}
-    list_filter = ['performances__edition']
+    list_filter = ['performances__edition', 'performances__genre']
