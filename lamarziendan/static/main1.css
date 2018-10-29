@@ -26,17 +26,22 @@ section.edition {
     text-transform: uppercase;
     position: relative;
     display: inline-block;
-    margin: 30px 70px; }
+    margin: 30px 0;
+    padding: 0 80px;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word; }
     section.edition h1 span.shrunk {
       display: inline-block;
       transform: scale(0.8, 1); }
     section.edition h1 a {
       position: absolute;
-      top: 0; }
+      top: 0;
+      bottom: 0; }
       section.edition h1 a.previous {
-        left: -80px; }
+        left: 0; }
       section.edition h1 a.next {
-        right: -80px; }
+        right: 0; }
       section.edition h1 a img {
         width: 80px; }
   section.edition > img {

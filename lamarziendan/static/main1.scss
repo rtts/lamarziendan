@@ -39,7 +39,11 @@ section.edition {
     text-transform: uppercase;
     position: relative;
     display: inline-block;
-    margin: 30px 70px;
+    margin: 30px 0;
+    padding: 0 80px;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
 
     span.shrunk {
       display: inline-block;
@@ -50,10 +54,10 @@ section.edition {
       position: absolute;
       top: 0;
       &.previous {
-        left: -80px;
+        left: 0;
       }
       &.next {
-        right: -80px;
+        right: 0;
       }
       img {
         width: 80px;
