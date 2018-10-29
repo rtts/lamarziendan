@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static thumbnail %}
+
+{% block content %}
+  <section class="edition">
+    <h1>
+      {% with edition=edition.get_previous_by_date %}
+        {% if edition.slug %}
+          <a href="{{edition.get_absolute_url}}"><img src="{% static 'previous.svg' %}" alt="Vorige"></a>
+        {% else %}
+          <img class="disabled" src="{% static 'previous.svg' %}" alt="Vorige">
+        {% endif %}
+      {% endwith %}
+
+      {{edition.title}}
+
+      {% with edition=edition.get_next_by_date %}
+        {% if edition.slug %}
+          <a href="{{edition.get_absolute_url}}"><img src="{% static 'next.svg' %}" alt="Volgende"></a>
+        {% else %}
+          <img class="disabled" src="{% static 'next.svg' %}" alt="Volgende">
+        {% endif %}
+      {% endwith %}
+    </h1>
+    {% if edition.image %}
+      <img src="{{edition.image.url}}" alt="Spannende actiefoto">
+    {% else %}
+      <img src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
+    {% endif %}
+  </section>
+
+  <section class="performances">
+    {% for performance in edition.performances.all %}
+      <div>
+        <div class="performance">
+          <div class="image" style="background-image: url('{% thumbnail performance.artist.image 500x500 %}')"></div>
+          <div class="title">
+            {{performance.artist}}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+{% endblock %}

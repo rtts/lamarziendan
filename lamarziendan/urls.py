@@ -1,8 +1,21 @@
 from django.contrib import admin
 from django.urls import path
-from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
+from django.shortcuts import redirect
+from django.http import Http404
+from .views import EditionView
+from .models import Edition
 
-urlpatterns = [
-    path('', Homepage.as_view()),
+def latest_edition(request):
+    latest_edition = Edition.objects.exclude(slug=None).last()
+    if latest_edition:
+        return redirect(latest_edition)
+    else:
+        raise Http404
+
+urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+    path('', latest_edition),
+    path('editie/<slug:slug>/', EditionView.as_view(), name='edition'),
     path('admin/', admin.site.urls),
 ]

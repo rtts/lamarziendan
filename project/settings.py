@@ -19,7 +19,7 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/srv/lamarziendan/static'
-MEDIA_ROOT = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = '/srv/lamarziendan/media'
 SASS_PROCESSOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(lamarziendan.__file__)), 'static')
 

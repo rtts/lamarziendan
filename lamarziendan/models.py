@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from ckeditor.fields import RichTextField
 from numberedmodel.models import NumberedModel
 
@@ -15,6 +16,7 @@ class Genre(models.Model):
 
 class Artist(models.Model):
     name = models.CharField('naam', max_length=255)
+    slug = models.SlugField('URL', unique=True, null=True)
     description = RichTextField('beschrijving', blank=True)
     image = models.ImageField('afbeelding', blank=True)
     links = models.TextField('social media links', help_text='Plak hier per regel één hyperlink', blank=True)
@@ -30,9 +32,14 @@ class Artist(models.Model):
 class Edition(models.Model):
     date = models.DateField()
     title = models.CharField('titel', max_length=255)
+    slug = models.SlugField('URL', unique=True, null=True)
     description = RichTextField('beschrijving', blank=True)
     image = models.ImageField('afbeelding', blank=True)
     photolink = models.URLField('link naar het fotoalbum', blank=True)
+
+    def get_absolute_url(self):
+        if self.slug:
+            return reverse('edition', args=[self.slug])
 
     def __str__(self):
         return self.title

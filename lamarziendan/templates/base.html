@@ -8,13 +8,19 @@
     <title>{% block title %}Lamarziendan{% endblock %}</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'main.scss' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'main1.scss' %}"/>
     {% block extrahead %}{% endblock %}
   </head>
-  <body>
+  <body style="background-image: url('{% static 'background.svg' %}')">
 
-    {% block content %}
-    {% endblock %}
+    <header>
+      <img src="{% static 'logo.svg' %}" alt="Lamarziendan">
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
 
     {% block extrabody %}{% endblock %}
   </body>
