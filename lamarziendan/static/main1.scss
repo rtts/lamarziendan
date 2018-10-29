@@ -44,6 +44,7 @@ section.edition {
     max-width: 100%;
     box-sizing: border-box;
     word-break: break-word;
+    overflow-wrap: break-word;
 
     span.shrunk {
       display: inline-block;
