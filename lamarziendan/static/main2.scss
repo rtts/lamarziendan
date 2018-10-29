@@ -1,4 +1,5 @@
 $yellow: #fdfbbf;
+$yellowD: #f9ef22;
 $pink: #eb4072;
 $blue: #343677;
 $small: 500px;
@@ -35,11 +36,24 @@ header {
   }
 }
 
+h1, h2 {
+  font-weight: normal;
+  text-align: center;
+  margin: 1em 0;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  color: $blue;
+  font-size: 56px;
+  line-height: 1;
+}
+
 section.edition {
   text-align: center;
+  position: relative;
 
   h1 {
     letter-spacing: 3px;
+    font-weight: bold;
     font-size: 36px;
     color: $blue;
     text-transform: uppercase;
@@ -51,7 +65,7 @@ section.edition {
     box-sizing: border-box;
     // break-word is not supperted by Firefox...
     word-break: break-all;
-    overflow-wrap: break-all;
+    overflow-wrap: break-word;
 
     span.shrunk {
       display: inline-block;
@@ -73,6 +87,20 @@ section.edition {
     }
   }
 
+  h2 {
+    overflow-wrap: break-word;
+    text-transform: uppercase;
+    position: absolute;
+    color: $yellowD;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 36px;
+  }
+
+
   > img {
     display: block;
     width: 100%;
@@ -82,11 +110,68 @@ section.edition {
   }
 }
 
+section.artist {
+  background: white;
+  border: 7px solid $yellowD;
+  margin: 50px 0;
+  padding: 10px;
+  font-size: 20px;
+
+  > div {
+    max-width: 700px;
+    margin: auto;
+
+    h1 {
+      text-align: center;
+      line-height: 1;
+      font-size: 36px;
+      color: $pink;
+      text-transform: uppercase;
+      margin: 0;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      overflow-wrap: break-word;
+    }
+
+    img {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    div.website {
+      margin: 22px;
+      text-align: center;
+
+      a {
+        font-size: 22px;
+        color: $pink;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+
+    div.socialmedia {
+      text-align: center;
+      margin: 30px 0;
+      img {
+        margin: 2px;
+        background: $pink;
+        border-radius: 6px;
+        width: 50px;
+      }
+    }
+  }
+}
+
 section.performances {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
   margin-top: 10px;
+
+  a {
+    text-decoration: none;
+  }
 
   > div {
     flex: 1 1 200px;
@@ -94,7 +179,7 @@ section.performances {
 
     div.performance {
       margin: 10px;
-      height: 300px;
+      height: 320px;
       background-color: white;
 
       div.image {
@@ -107,8 +192,22 @@ section.performances {
         padding: 10px;
         box-sizing: border-box;
         text-transform: uppercase;
-        font-size: 24px;
-        color: $pink;
+
+        h1, h2 {
+          margin: 0;
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 24px;
+          margin-bottom: 5px;
+          color: $pink;
+        }
+        h2 {
+          margin: 0;
+          font-size: 18px;
+          color: $blue;
+        }
       }
     }
   }

@@ -28,12 +28,17 @@
   <section class="performances">
     {% for performance in edition.performances.all %}
       <div>
-        <div class="performance">
-          <div class="image" style="background-image: url('{% thumbnail performance.artist.image 500x500 %}')"></div>
-          <div class="title">
-            {{performance.artist}}
+        <a href="{{performance.artist.get_absolute_url}}">
+          <div class="performance">
+            <div class="image" style="background-image: url('{% thumbnail performance.artist.image 500x500 %}')"></div>
+            <div class="title">
+              <h1>{{performance.artist}}</h1>
+              {% if performance.genre %}
+                <h2>{{performance.genre}}</h2>
+              {% endif %}
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     {% endfor %}
     <div></div>

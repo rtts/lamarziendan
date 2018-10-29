@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static thumbnail %}
+
+{% block content %}
+  <section class="artist">
+    <div>
+      <h1>
+        {{artist.name}}
+      </h1>
+      {{artist.description|safe}}
+      {% if artist.image %}
+        <img draggable="false" ondragstart="return false" src="{{artist.image.url}}" alt="{{artist.name}}">
+      {% endif %}
+
+      <div class="website">
+        <a href="http://www.{{artist.slug}}.nl/">www.{{artist.slug}}.nl</a>
+      </div>
+      <div class="socialmedia">
+        <a href="https://www.instagram.com/"><img src="{% static 'instagram.svg' %}"></a>
+        <a href="https://twitter.com/"><img src="{% static 'twitter.svg' %}"></a>
+        <a href="https://www.facebook.com/"><img src="{% static 'facebook.svg' %}"></a>
+        <a href="https://www.linkedin.com/"><img src="{% static 'linkedin.svg' %}"></a>
+      </div>
+    </div>
+  </section>
+
+  <h1>te zien in:</h1>
+
+  {% for performance in artist.performances.all %}
+    {% with edition=performance.edition %}
+      <a href="{{edition.get_absolute_url}}">
+        <section class="edition">
+          <h2>{{edition.title}}</h2>
+          {% if edition.image %}
+            <img draggable="false" ondragstart="return false" src="{{edition.image.url}}" alt="Spannende actiefoto">
+          {% else %}
+            <img draggable="false" ondragstart="return false" src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
+          {% endif %}
+        </section>
+      </a>
+    {% endwith %}
+  {% endfor %}
+
+{% endblock %}
+

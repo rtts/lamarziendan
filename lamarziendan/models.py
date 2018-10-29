@@ -21,6 +21,10 @@ class Artist(models.Model):
     image = models.ImageField('afbeelding', blank=True)
     links = models.TextField('social media links', help_text='Plak hier per regel één hyperlink', blank=True)
 
+    def get_absolute_url(self):
+        if self.slug:
+            return reverse('artist', args=[self.slug])
+
     def __str__(self):
         return self.name
 

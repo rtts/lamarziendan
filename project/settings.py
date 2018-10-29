@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'embed_video',
     'ckeditor',
     'easy_thumbnails',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
