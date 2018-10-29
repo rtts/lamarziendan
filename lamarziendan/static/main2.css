@@ -47,21 +47,20 @@ section.edition {
     position: relative;
     display: inline-block;
     margin: 30px 0;
-    padding: 0 80px;
+    padding: 0 40px;
     max-width: 100%;
-    box-sizing: border-box;
-    word-break: break-all;
-    overflow-wrap: break-word; }
+    box-sizing: border-box; }
     section.edition h1 span.shrunk {
-      display: inline-block;
-      transform: scale(0.8, 1); }
+      display: block;
+      transform: scale(0.8, 1);
+      overflow-wrap: break-word; }
     section.edition h1 a {
       position: absolute;
       top: 0; }
       section.edition h1 a.previous {
-        left: 0; }
+        left: -3vw; }
       section.edition h1 a.next {
-        right: 0; }
+        right: -3vw; }
       section.edition h1 a img {
         width: 80px; }
   section.edition h2 {
@@ -72,8 +71,8 @@ section.edition {
     margin-left: auto;
     margin-right: auto;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
     font-size: 36px; }
   section.edition > img {
     display: block;

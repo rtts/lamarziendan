@@ -64,26 +64,24 @@ section.edition {
     position: relative;
     display: inline-block;
     margin: 30px 0;
-    padding: 0 80px;
+    padding: 0 40px;
     max-width: 100%;
     box-sizing: border-box;
-    // break-word is not supperted by Firefox...
-    word-break: break-all;
-    overflow-wrap: break-word;
 
     span.shrunk {
-      display: inline-block;
+      display: block;
       transform: scale(0.8, 1);
+      overflow-wrap: break-word;
     }
 
     a {
       position: absolute;
       top: 0;
       &.previous {
-        left: 0;
+        left: -3vw;
       }
       &.next {
-        right: 0;
+        right: -3vw;
       }
       img {
         width: 80px;
@@ -99,8 +97,8 @@ section.edition {
     margin-left: auto;
     margin-right: auto;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
     font-size: 36px;
   }
 
