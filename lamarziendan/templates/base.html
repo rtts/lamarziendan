@@ -8,16 +8,16 @@
     <title>{% block title %}Lamarziendan{% endblock %}</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'main1.scss' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'main2.scss' %}"/>
     {% block extrahead %}{% endblock %}
   </head>
   <body style="background-image: url('{% static 'background.svg' %}')">
 
     <header>
-      <img src="{% static 'logo.svg' %}" alt="Lamarziendan">
+      <img draggable="false" ondragstart="return false" src="{% static 'logo.svg' %}" alt="Lamarziendan">
     </header>
 
-    <main>
+    <main id="main">
       {% block content %}
       {% endblock %}
     </main>

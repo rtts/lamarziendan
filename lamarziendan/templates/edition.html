@@ -6,7 +6,7 @@
     <h1>
       {% with edition=edition.get_previous_by_date %}
         {% if edition.slug %}
-          <a class="previous" href="{{edition.get_absolute_url}}"><img src="{% static 'previous.svg' %}" alt="Vorige"></a>
+          <a class="previous" href="{{edition.get_absolute_url}}"><img draggable="false" ondragstart="return false" src="{% static 'previous.svg' %}" alt="Vorige"></a>
         {% endif %}
       {% endwith %}
 
@@ -14,14 +14,14 @@
 
       {% with edition=edition.get_next_by_date %}
         {% if edition.slug %}
-          <a class="next" href="{{edition.get_absolute_url}}"><img src="{% static 'next.svg' %}" alt="Volgende"></a>
+          <a class="next" href="{{edition.get_absolute_url}}"><img draggable="false" ondragstart="return false" src="{% static 'next.svg' %}" alt="Volgende"></a>
         {% endif %}
       {% endwith %}
     </h1>
     {% if edition.image %}
-      <img src="{{edition.image.url}}" alt="Spannende actiefoto">
+      <img draggable="false" ondragstart="return false" src="{{edition.image.url}}" alt="Spannende actiefoto">
     {% else %}
-      <img src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
+      <img draggable="false" ondragstart="return false" src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
     {% endif %}
   </section>
 
@@ -41,4 +41,36 @@
     <div></div>
     <div></div>
   </section>
+{% endblock %}
+
+{% block extrabody %}
+  <script type="module">
+    import TinyGesture from "{% static 'TinyGesture.js' %}";
+
+    document.addEventListener('DOMContentLoaded', () => {
+        //const main = document.getElementById('main');
+        const main = document.body;
+        const gesture = new TinyGesture(main);
+
+        {% with edition=edition.get_previous_by_date %}
+        {% if edition.slug %}
+        gesture.on('swiperight', () => {
+            main.style.transform = 'translateX(100%)';
+            main.style.opacity = '0';
+            setTimeout(() => location.href = '{{edition.get_absolute_url}}', 1000);
+        });
+        {% endif %}
+        {% endwith %}
+
+        {% with edition=edition.get_next_by_date %}
+        {% if edition.slug %}
+        gesture.on('swipeleft', () => {
+            main.style.transform = 'translateX(-100%)';
+            main.style.opacity = '0';
+            setTimeout(() => location.href = '{{edition.get_absolute_url}}', 1000);
+        });
+        {% endif %}
+        {% endwith %}
+    });
+  </script>
 {% endblock %}

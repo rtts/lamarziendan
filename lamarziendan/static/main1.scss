@@ -13,6 +13,12 @@ body {
   background-color: $yellow;
   background-size: 250px;
   font-family: Bariol, sans-serif;
+  transition: 1s;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 main {
