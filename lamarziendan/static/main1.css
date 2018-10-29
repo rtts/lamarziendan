@@ -30,8 +30,8 @@ section.edition {
     padding: 0 80px;
     max-width: 100%;
     box-sizing: border-box;
-    word-break: break-word;
-    overflow-wrap: break-word; }
+    word-break: break-all;
+    overflow-wrap: break-all; }
     section.edition h1 span.shrunk {
       display: inline-block;
       transform: scale(0.8, 1); }

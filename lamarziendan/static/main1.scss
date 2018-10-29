@@ -43,8 +43,9 @@ section.edition {
     padding: 0 80px;
     max-width: 100%;
     box-sizing: border-box;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    // break-word is not supperted by Firefox...
+    word-break: break-all;
+    overflow-wrap: break-all;
 
     span.shrunk {
       display: inline-block;
