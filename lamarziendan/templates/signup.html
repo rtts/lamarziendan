@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="spacer"></div>
+  <center>
+    <form method="post" class="auth_form">
+      <h3>Wil je graag een account?</h3>
+      {% csrf_token %}
+      <table>
+        {{form.as_table}}
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Aanmelden"></td>
+        </tr>
+      </table>
+    </form>
+
+    <form method="post" action="{% url 'admin:login' %}" class="auth_form">
+      <h3>Heb je al een account?</h3>
+      {% csrf_token %}
+      <table>
+        <tr><th><label for="id_username">Gebruikersnaam:</label></th><td><input type="text" name="username" maxlength="150" required id="id_username" /></td></tr>
+        <tr><th><label for="id_password">Wachtwoord:</label></th><td><input type="password" name="password" maxlength="32" required id="id_password" /></td></tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Inloggen"></td>
+        </tr>
+      </table>
+    </form>
+  </center>
+{% endblock %}
+
+{% block extrabody %}
+  <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+  <script>
+    var slugfield = document.getElementById('id_username');
+  </script>
+  <script>
+    /* My own implementation of Django's prepopulate.js */
+
+    var slugfield = document.getElementById('id_username');
+    var titlefield = document.getElementById('id_first_name');
+
+    if (slugfield && titlefield) {
+        var virgin = slugfield.value === '';
+
+        if (virgin) {
+            titlefield.addEventListener('input', function() {
+                if (virgin) {
+                    slugfield.value = URLify(titlefield.value);
+                }
+            });
+        }
+
+        slugfield.addEventListener('change', function() {
+            virgin = false;
+        });
+    }
+  </script>
+{% endblock %}

@@ -1,5 +1,17 @@
-from django.views.generic import DetailView
+from django.contrib.auth import login
+from django.shortcuts import redirect
+from django.views.generic import DetailView, FormView
 from .models import Edition, Artist, TeamMember
+from .forms import SignupForm
+
+class SignupView(FormView):
+    template_name = 'signup.html'
+    form_class = SignupForm
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('admin:index')
 
 class EditionView(DetailView):
     template_name = 'edition.html'

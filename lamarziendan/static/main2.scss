@@ -36,6 +36,7 @@ footer {
   user-select: auto;
   max-width: 1000px;
   margin: auto;
+  clear: both;
 }
 
 div.spacer {
@@ -240,6 +241,22 @@ section.participations {
       color: $blue;
     }
   }
+}
+
+table {
+  th {
+    text-align: right;
+    font-weight: normal;
+  }
+}
+
+form.auth_form {
+  display: inline-block;
+  border: 7px solid $pink;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 @font-face {
