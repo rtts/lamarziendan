@@ -26,20 +26,18 @@
 
   <h1>Werkte mee aan:</h1>
 
-  {% for participation in participations %}
-    {% with edition=participation.edition %}
-      <a href="{{edition.get_absolute_url}}">
-        <section class="edition">
-          <h2>{{edition.title}}</h2>
-          {% if edition.image %}
-            <img draggable="false" ondragstart="return false" src="{{edition.image.url}}" alt="Spannende actiefoto">
-          {% else %}
-            <img draggable="false" ondragstart="return false" src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
-          {% endif %}
-        </section>
-      </a>
-      <div class="spacer"></div>
-    {% endwith %}
+  {% for edition in object.editions.all %}
+    <a href="{{edition.get_absolute_url}}">
+      <section class="edition">
+        <h2>{{edition.title}}</h2>
+        {% if edition.image %}
+          <img draggable="false" ondragstart="return false" src="{{edition.image.url}}" alt="Spannende actiefoto">
+        {% else %}
+          <img draggable="false" ondragstart="return false" src="{% static 'placeholder.png' %}" alt="Helaas geen foto beschikbaar">
+        {% endif %}
+      </section>
+    </a>
+    <div class="spacer"></div>
   {% endfor %}
 
 {% endblock %}

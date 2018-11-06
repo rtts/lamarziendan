@@ -1,12 +1,9 @@
 from django.contrib import admin
+from django.forms import CheckboxSelectMultiple
 from .models import *
 
 class PerformanceAdmin(admin.StackedInline):
     model = Performance
-    extra = 0
-
-class ParticipationAdmin(admin.StackedInline):
-    model = Participation
     extra = 0
 
 @admin.register(Genre)
@@ -17,7 +14,10 @@ class GenreAdmin(admin.ModelAdmin):
 class EditionAdmin(admin.ModelAdmin):
     list_display = ['title', 'date']
     prepopulated_fields = {"slug": ("title",)}
-    inlines = [PerformanceAdmin, ParticipationAdmin]
+    inlines = [PerformanceAdmin]
+    formfield_overrides = {
+        models.ManyToManyField: {'widget': CheckboxSelectMultiple},
+    }
 
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
@@ -27,6 +27,5 @@ class ArtistAdmin(admin.ModelAdmin):
 
 @admin.register(TeamMember)
 class TeamAdmin(admin.ModelAdmin):
-    inlines = [ParticipationAdmin]
     prepopulated_fields = {"slug": ("name",)}
-    list_filter = ['participations__edition']
+    list_filter = ['editions']

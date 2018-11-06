@@ -53,8 +53,8 @@
 
   <section class="participations">
     <h2>
-      {% for participation in participations %}
-        <a href="{{participation.team_member.get_absolute_url}}">{{participation.team_member}}</a>{% if not forloop.last %},{% endif %}
+      {% for team_member in edition.participations.all %}
+        <a href="{{team_member.get_absolute_url}}">{{team_member}}</a>{% if not forloop.last %},{% endif %}
       {% endfor %}
     </h2>
   </section>

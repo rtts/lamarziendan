@@ -59,6 +59,7 @@ class Edition(models.Model):
     description = RichTextField('beschrijving', blank=True)
     image = models.ImageField('afbeelding', blank=True)
     photolink = models.URLField('link naar het fotoalbum', blank=True)
+    participations = models.ManyToManyField(TeamMember, verbose_name='teamleden', related_name='editions', blank=True)
 
     def get_absolute_url(self):
         if self.slug:
@@ -88,15 +89,3 @@ class Performance(NumberedModel):
         verbose_name = 'Optreden'
         verbose_name_plural = 'Optredens'
         ordering = ['number']
-
-class Participation(models.Model):
-    team_member = models.ForeignKey(TeamMember, verbose_name='teamlid', on_delete=models.CASCADE, related_name='participations')
-    edition = models.ForeignKey(Edition, verbose_name='editie', on_delete=models.CASCADE, related_name='participations')
-
-    def __str__(self):
-        return '{} hielp mee bij {}'.format(self.team_member, self.edition)
-
-    class Meta:
-        verbose_name = 'Participatie'
-        verbose_name_plural = 'Participaties'
-        ordering = ['team_member__name']
