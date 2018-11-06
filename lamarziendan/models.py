@@ -89,18 +89,14 @@ class Performance(NumberedModel):
         verbose_name_plural = 'Optredens'
         ordering = ['number']
 
-class Participation(NumberedModel):
-    number = models.PositiveIntegerField('nummer', blank=True)
+class Participation(models.Model):
     team_member = models.ForeignKey(TeamMember, verbose_name='teamlid', on_delete=models.CASCADE, related_name='participations')
     edition = models.ForeignKey(Edition, verbose_name='editie', on_delete=models.CASCADE, related_name='participations')
 
     def __str__(self):
         return '{} hielp mee bij {}'.format(self.team_member, self.edition)
 
-    def number_with_respect_to(self):
-        return self.edition.participations.all()
-
     class Meta:
         verbose_name = 'Participatie'
         verbose_name_plural = 'Participaties'
-        ordering = ['number']
+        ordering = ['team_member__name']
