@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.utils.text import slugify
+from .models import TeamMember
 
 username_validator = UnicodeUsernameValidator()
 
@@ -38,8 +40,8 @@ class SignupForm(forms.Form):
         try:
             group = Group.objects.get(name='Kernteam')
             user.groups.add(group)
+            TeamMember(name=first_name, slug=slugify(first_name)).save()
         except:
-            raise
             pass
 
         return user
