@@ -56,6 +56,7 @@ class Edition(models.Model):
     date = models.DateField()
     title = models.CharField('titel', max_length=255)
     slug = models.SlugField('URL', unique=True, null=True)
+    concept = models.BooleanField('concept', default=False)
     description = RichTextField('beschrijving', blank=True)
     image = models.ImageField('afbeelding', blank=True)
     photolink = models.URLField('link naar het fotoalbum', blank=True)
