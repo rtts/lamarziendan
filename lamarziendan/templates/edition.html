@@ -62,7 +62,7 @@
 {% endblock %}
 
 {% block extrabody %}
-  {% block comment %}
+  {% comment %}
   <script type="module">
     import TinyGesture from "{% static 'TinyGesture.js' %}";
 
@@ -92,5 +92,5 @@
         {% endwith %}
     });
   </script>
-  {% endblock %}
+  {% endcomment %}
 {% endblock %}
