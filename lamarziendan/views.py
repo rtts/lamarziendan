@@ -15,7 +15,7 @@ class SignupView(FormView):
 
 class EditionView(DetailView):
     template_name = 'edition.html'
-    queryset = Edition.objects.exclude(slug=None, concept=True)
+    queryset = Edition.objects.exclude(slug=None).exclude(concept=True)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -8,7 +8,7 @@ from .views import EditionView, ArtistView, TeamView, SignupView
 from .models import Edition
 
 def latest_edition(request):
-    latest_edition = Edition.objects.exclude(slug=None, concept=True).last()
+    latest_edition = Edition.objects.exclude(slug=None).exclude(concept=True).last()
     if latest_edition:
         return redirect(latest_edition)
     else:
