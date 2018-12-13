@@ -5,7 +5,7 @@
   <section class="edition">
     <h1>
       {% with edition=edition.get_previous_by_date %}
-        {% if edition.slug %}
+        {% if edition.slug and not edition.concept %}
           <a class="previous" href="{{edition.get_absolute_url}}"><img draggable="false" ondragstart="return false" src="{% static 'previous.svg' %}" alt="Vorige"></a>
         {% endif %}
       {% endwith %}
@@ -13,7 +13,7 @@
       <span class="shrunk">{{edition.title}}</span>
 
       {% with edition=edition.get_next_by_date %}
-        {% if edition.slug %}
+        {% if edition.slug and not edition.concept %}
           <a class="next" href="{{edition.get_absolute_url}}"><img draggable="false" ondragstart="return false" src="{% static 'next.svg' %}" alt="Volgende"></a>
         {% endif %}
       {% endwith %}
@@ -62,6 +62,7 @@
 {% endblock %}
 
 {% block extrabody %}
+  {% block comment %}
   <script type="module">
     import TinyGesture from "{% static 'TinyGesture.js' %}";
 
@@ -91,4 +92,5 @@
         {% endwith %}
     });
   </script>
+  {% endblock %}
 {% endblock %}

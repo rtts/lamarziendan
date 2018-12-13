@@ -12,7 +12,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 @admin.register(Edition)
 class EditionAdmin(admin.ModelAdmin):
-    list_display = ['title', 'date']
+    list_display = ['title', 'date', 'concept']
     prepopulated_fields = {"slug": ("title",)}
     inlines = [PerformanceAdmin]
     formfield_overrides = {
