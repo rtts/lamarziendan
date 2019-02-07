@@ -116,9 +116,15 @@ class Page(NumberedModel):
         verbose_name_plural = 'Pagina’s'
         ordering = ['position']
 
+SECTION_TYPES = [
+    ('normal', 'Normaal'),
+    ('banner', 'Banner'),
+    ('contact', 'Contactformulier'),
+]
 class Section(NumberedModel):
     page = models.ForeignKey(Page, verbose_name='pagina', related_name='sections', on_delete=models.CASCADE)
     position = models.PositiveIntegerField('positie', blank=True)
+    type = models.CharField('soort sectie', help_text='Het soort sectie bepaalt hoe de sectie wordt weergegeven. Sommige soorten hebben extra functionaliteiten!', max_length=16, default='normal', choices=SECTION_TYPES)
     title = models.CharField('titel', max_length=255)
     content = RichTextField('inhoud', blank=True)
     image = models.ImageField('afbeelding', blank=True)
