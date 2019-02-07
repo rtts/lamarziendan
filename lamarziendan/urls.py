@@ -15,13 +15,12 @@ def latest_edition(request):
         raise Http404
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
-    path('p/', PageView.as_view(), {'slug': ''}, name='homepage'),
-    path('p/<slug:slug>/', PageView.as_view(), name='page'),
     path('', latest_edition),
-    #path('edities/', latest_edition),
+    path('edities/', latest_edition),
     path('edities/<slug:slug>/', EditionView.as_view(), name='edition'),
     path('artiesten/<slug:slug>/', ArtistView.as_view(), name='artist'),
     path('team/<slug:slug>/', TeamView.as_view(), name='team'),
     path('aanmelden/', SignupView.as_view(), name='signup'),
     path('admin/', admin.site.urls),
+    path('<slug:slug>/', PageView.as_view(), name='page'),
 ]
