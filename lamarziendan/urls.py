@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
 from django.http import Http404
-from .views import EditionView, ArtistView, TeamView, SignupView
+from .views import EditionView, ArtistView, TeamView, SignupView, PageView
 from .models import Edition
 
 def latest_edition(request):
@@ -15,9 +15,12 @@ def latest_edition(request):
         raise Http404
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+    path('p/', PageView.as_view(), {'slug': ''}, name='homepage'),
+    path('p/<slug:slug>/', PageView.as_view(), name='page'),
     path('', latest_edition),
-    path('editie/<slug:slug>/', EditionView.as_view(), name='edition'),
-    path('artiest/<slug:slug>/', ArtistView.as_view(), name='artist'),
+    #path('edities/', latest_edition),
+    path('edities/<slug:slug>/', EditionView.as_view(), name='edition'),
+    path('artiesten/<slug:slug>/', ArtistView.as_view(), name='artist'),
     path('team/<slug:slug>/', TeamView.as_view(), name='team'),
     path('aanmelden/', SignupView.as_view(), name='signup'),
     path('admin/', admin.site.urls),

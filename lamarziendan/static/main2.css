@@ -46,6 +46,16 @@ h1, h2 {
   font-size: 56px;
   line-height: 1; }
 
+section.description {
+  max-width: 700px;
+  margin: auto;
+  padding: 1em;
+  font-size: 20px; }
+  section.description h1, section.description h2, section.description h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #eb4072; }
+
 section.edition {
   text-align: center;
   position: relative; }
@@ -186,6 +196,25 @@ form.auth_form {
   margin-right: 20px;
   margin-bottom: 20px;
   padding: 10px; }
+
+article.page section {
+  border: 1px solid blue; }
+  article.page section div {
+    margin: 2em 0; }
+  article.page section div.photo img {
+    display: block;
+    width: 100%;
+    margin: auto; }
+  article.page section div.video div.iframe {
+    width: 100%;
+    padding-bottom: 56%;
+    position: relative; }
+    article.page section div.video div.iframe iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
 
 @font-face {
   font-family: 'Bariol';

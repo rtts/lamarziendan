@@ -25,6 +25,12 @@
     {% endif %}
   </section>
 
+  {% if edition.description %}
+    <section class="description">
+      {{edition.description|safe}}
+    </section>
+  {% endif %}
+
   <section class="performances">
     {% for performance in edition.performances.all %}
       <div>

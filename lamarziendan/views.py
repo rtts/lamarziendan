@@ -1,8 +1,23 @@
 from django.contrib.auth import login
 from django.shortcuts import redirect
 from django.views.generic import DetailView, FormView
-from .models import Edition, Artist, TeamMember
+from .models import Edition, Artist, TeamMember, Page
 from .forms import SignupForm
+
+class MenuMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pages = Page.objects.filter(menu=True).exclude(slug='')
+        footer = get_config(20)
+        context.update({
+            'pages': pages,
+            'footer': footer,
+        })
+        return context
+
+class PageView(MenuMixin, DetailView):
+    model = Page
+    template_name = 'lamarziendan/page.html'
 
 class SignupView(FormView):
     template_name = 'signup.html'
