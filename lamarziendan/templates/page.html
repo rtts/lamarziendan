@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-{% load static thumbnail %}
+{% load static thumbnail embed_video_tags %}
 
 {% block title %}{{block.super}} - {{object.title}}{% endblock %}
 
 {% block content %}
+  <h2>
+    {{object.tagline}}
+  </h2>
   <article class="page">
     {% for section in object.sections.all %}
       <section>

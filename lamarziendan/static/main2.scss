@@ -5,6 +5,60 @@ $blue: #343677;
 $small: 500px;
 $medium: 800px;
 
+button.hamburger {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    background: $pink !important;
+  }
+  &.is-active {
+    position: fixed;
+  }
+  &:hover {
+    opacity: 1 !important;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+ul#menu {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  padding-top: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  list-style: none;
+
+  li {
+    padding: 1em;
+    margin: 0 1em;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.5;
+    text-align: center;
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 34px;
+    }
+  }
+
+  transition: .5s ease;
+  transform: translatex(100%);
+  &.visible {
+    transform: translatex(0);
+  }
+}
+
+
 html, body {
   margin: 0;
   padding: 2%;
@@ -15,11 +69,6 @@ body {
   background-size: 250px;
   font-family: Bariol, sans-serif;
   transition: 1s;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 main {

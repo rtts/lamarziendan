@@ -1,3 +1,43 @@
+button.hamburger {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0; }
+  button.hamburger .hamburger-inner, button.hamburger .hamburger-inner:before, button.hamburger .hamburger-inner:after {
+    background: #eb4072 !important; }
+  button.hamburger.is-active {
+    position: fixed; }
+  button.hamburger:hover {
+    opacity: 1 !important; }
+  button.hamburger:focus {
+    outline: none !important; }
+
+ul#menu {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  padding-top: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  list-style: none;
+  transition: .5s ease;
+  transform: translatex(100%); }
+  ul#menu li {
+    padding: 1em;
+    margin: 0 1em;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.5;
+    text-align: center; }
+    ul#menu li a {
+      color: black;
+      text-decoration: none;
+      font-size: 34px; }
+  ul#menu.visible {
+    transform: translatex(0); }
+
 html, body {
   margin: 0;
   padding: 2%; }

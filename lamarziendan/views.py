@@ -1,8 +1,14 @@
 from django.contrib.auth import login
 from django.shortcuts import redirect
 from django.views.generic import DetailView, FormView
-from .models import Edition, Artist, TeamMember, Page
+from .models import Edition, Artist, TeamMember, Page, Config
 from .forms import SignupForm
+
+def get_config(parameter):
+    if parameter not in [t[0] for t in Config.TYPES]:
+        raise ValueError('Invalid configuration parameter requested')
+    (c, created) = Config.objects.get_or_create(parameter=parameter)
+    return c.content
 
 class MenuMixin(object):
     def get_context_data(self, **kwargs):
@@ -17,7 +23,7 @@ class MenuMixin(object):
 
 class PageView(MenuMixin, DetailView):
     model = Page
-    template_name = 'lamarziendan/page.html'
+    template_name = 'page.html'
 
 class SignupView(FormView):
     template_name = 'signup.html'
@@ -28,7 +34,7 @@ class SignupView(FormView):
         login(self.request, user)
         return redirect('admin:index')
 
-class EditionView(DetailView):
+class EditionView(MenuMixin, DetailView):
     template_name = 'edition.html'
     queryset = Edition.objects.exclude(slug=None).exclude(concept=True)
 
@@ -40,7 +46,7 @@ class EditionView(DetailView):
         })
         return context
 
-class ArtistView(DetailView):
+class ArtistView(MenuMixin, DetailView):
     template_name = 'artist.html'
     queryset = Artist.objects.exclude(slug=None)
 
@@ -54,7 +60,7 @@ class ArtistView(DetailView):
         })
         return context
 
-class TeamView(DetailView):
+class TeamView(MenuMixin, DetailView):
     template_name = 'team.html'
     queryset = TeamMember.objects.exclude(slug=None)
 
