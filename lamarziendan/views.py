@@ -1,6 +1,6 @@
 from django.contrib.auth import login
 from django.shortcuts import redirect
-from django.views.generic import DetailView, FormView
+from django.views.generic import DetailView, FormView, TemplateView
 from .models import Edition, Artist, TeamMember, Page, Config
 from .forms import SignupForm
 
@@ -20,6 +20,9 @@ class MenuMixin(object):
             'footer': footer,
         })
         return context
+
+class Thanks(MenuMixin, TemplateView):
+    template_name = 'thanks.html'
 
 class PageView(MenuMixin, DetailView):
     model = Page
