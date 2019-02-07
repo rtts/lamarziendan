@@ -46,11 +46,7 @@ body {
   background-color: #fdfbbf;
   background-size: 250px;
   font-family: Bariol, sans-serif;
-  transition: 1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  transition: 1s; }
 
 main {
   max-width: 1000px;
