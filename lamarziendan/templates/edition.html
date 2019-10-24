@@ -25,12 +25,6 @@
     {% endif %}
   </section>
 
-  {% if edition.description %}
-    <section class="description">
-      {{edition.description|safe}}
-    </section>
-  {% endif %}
-
   <section class="performances">
     {% for performance in edition.performances.all %}
       <div>
@@ -53,11 +47,20 @@
     <div></div>
   </section>
 
+  {% if edition.description %}
+    <section class="description">
+      <div class="readmore">
+        {{edition.description|safe}}
+      </div>
+    </section>
+  {% endif %}
+
   <div class="spacer"></div>
 
-  <h1 style="font-size: 36px">Deze editie werd mede mogelijk gemaakt door:</h1>
-
   <section class="participations">
+    <h2>
+      Deze editie werd mede mogelijk gemaakt door:
+    </h2>
     <h2>
       {% for team_member in edition.participations.all %}
         <a href="{{team_member.get_absolute_url}}">{{team_member}}</a>{% if not forloop.last %},{% endif %}
@@ -68,35 +71,13 @@
 {% endblock %}
 
 {% block extrabody %}
-  {% comment %}
-  <script type="module">
-    import TinyGesture from "{% static 'TinyGesture.js' %}";
-
-    document.addEventListener('DOMContentLoaded', () => {
-        //const main = document.getElementById('main');
-        const main = document.body;
-        const gesture = new TinyGesture(main);
-
-        {% with edition=edition.get_previous_by_date %}
-        {% if edition.slug %}
-        gesture.on('swiperight', () => {
-            main.style.transform = 'translateX(100%)';
-            main.style.opacity = '0';
-            setTimeout(() => location.href = '{{edition.get_absolute_url}}', 1000);
-        });
-        {% endif %}
-        {% endwith %}
-
-        {% with edition=edition.get_next_by_date %}
-        {% if edition.slug %}
-        gesture.on('swipeleft', () => {
-            main.style.transform = 'translateX(-100%)';
-            main.style.opacity = '0';
-            setTimeout(() => location.href = '{{edition.get_absolute_url}}', 1000);
-        });
-        {% endif %}
-        {% endwith %}
+  <script src="{% static 'readMoreJS.min.js' %}"></script>
+  <script>
+    $readMoreJS.init({
+        target: 'div.readmore',
+        moreLink: 'Lees meer ...',
+        lessLink: '',
+        numOfWords: 100,
     });
   </script>
-  {% endcomment %}
 {% endblock %}

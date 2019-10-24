@@ -8,7 +8,7 @@
     <title>{% block title %}Lamarziendan{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'main4.scss' %}">
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'main5.scss' %}">
     <link rel="stylesheet" type="text/css" href="{% sass_src 'hamburgers.css' %}">
     <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
     {% block extrahead %}{% endblock %}
@@ -52,17 +52,17 @@
               menu.classList.toggle('visible');
           });
 
-          var links = document.querySelectorAll('a');
-          for (var link of links) {
-              var a = new RegExp('/' + window.location.host + '/');
-              if (!a.test(link.href)) {
-                  link.addEventListener('click', function(event) {
-                      event.preventDefault();
-                      event.stopPropagation();
-                      window.open(this.href, '_blank');
-                  });
-              }
-          }
+          /* var links = document.querySelectorAll('a');
+           * for (var link of links) {
+           *     var a = new RegExp('/' + window.location.host + '/');
+           *     if (!a.test(link.href)) {
+           *         link.addEventListener('click', function(event) {
+           *             event.preventDefault();
+           *             event.stopPropagation();
+           *             window.open(this.href, '_blank');
+           *         });
+           *     }
+           * } */
       });
     </script>
 

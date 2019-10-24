@@ -37,7 +37,7 @@ body.homepage {
           color: #eb4072; }
 
 button.hamburger {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   right: 0; }
@@ -118,7 +118,6 @@ h1, h2 {
   line-height: 1; }
 
 section.description {
-  border-radius: 5px;
   background: white;
   margin: auto;
   padding: 1em;
@@ -259,7 +258,10 @@ section.performances {
           color: #343677; }
 
 section.participations h2 {
-  font-size: 36px; }
+  font-size: 26px;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.5; }
   section.participations h2 a {
     color: #343677; }
 
@@ -365,4 +367,4 @@ form.contactform input, form.contactform textarea {
   font-weight: normal;
   font-style: normal; }
 
-/*# sourceMappingURL=../../../../../../static/main4.css.map */
+/*# sourceMappingURL=../../../../../../static/main5.css.map */

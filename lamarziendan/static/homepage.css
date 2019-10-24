@@ -118,7 +118,6 @@ h1, h2 {
   line-height: 1; }
 
 section.description {
-  border-radius: 5px;
   background: white;
   margin: auto;
   padding: 1em;
@@ -365,4 +364,4 @@ form.contactform input, form.contactform textarea {
   font-weight: normal;
   font-style: normal; }
 
-/*# sourceMappingURL=../../../../../../static/main4.css.map */
+/*# sourceMappingURL=../../../../../../static/homepage.css.map */
