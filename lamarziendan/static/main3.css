@@ -1,3 +1,40 @@
+body, html {
+  margin: 0;
+  padding: 0; }
+
+body.homepage {
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex; }
+  body.homepage article {
+    margin: auto; }
+    body.homepage article img {
+      width: 400px;
+      max-width: 80vw; }
+    body.homepage article ul#homepage_menu {
+      margin: 0;
+      padding: 0 1em;
+      margin-top: 10em;
+      list-style: none;
+      text-shadow: 2px 2px 10px black; }
+      body.homepage article ul#homepage_menu li {
+        margin: 0;
+        padding: 0;
+        display: inline; }
+        body.homepage article ul#homepage_menu li a {
+          font-size: 1.5em;
+          text-transform: uppercase;
+          color: white;
+          text-decoration: none;
+          margin: 0.25em; }
+        body.homepage article ul#homepage_menu li a:hover {
+          color: #eb4072; }
+
 button.hamburger {
   position: absolute;
   z-index: 1;
@@ -38,15 +75,12 @@ ul#menu {
   ul#menu.visible {
     transform: translatex(0); }
 
-html, body {
-  margin: 0;
-  padding: 2%; }
-
 body {
   background-color: #fdfbbf;
   background-size: 250px;
   font-family: Bariol, sans-serif;
-  transition: 1s; }
+  transition: 1s;
+  padding: 4%; }
 
 main {
   max-width: 1000px;

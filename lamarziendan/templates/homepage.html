@@ -1,0 +1,29 @@
+{% load static %}
+{% load sass_tags %}
+{% load thumbnail %}
+
+<!DOCTYPE html>
+<html lang="NL">
+  <head>
+    <title>{% block title %}Lamarziendan{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'main4.scss' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body class="homepage" style="background-image: url('{% static 'flare.jpg' %}')">
+
+    <article>
+      <a href="/"><img src="{% static 'logo.svg' %}" alt="Lamarziendan"></a>
+      <ul id="homepage_menu">
+        {% for p in pages %}
+          {% if p.slug %}
+            <li><a href="{% url 'page' p.slug %}" {% if p.pk == page.pk %}class="current"{% endif %}>{{p.title}}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </article>
+
+  </body>
+</html>

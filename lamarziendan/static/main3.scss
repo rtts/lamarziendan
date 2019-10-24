@@ -5,6 +5,60 @@ $blue: #343677;
 $small: 500px;
 $medium: 800px;
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body.homepage {
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+
+  article {
+    margin: auto;
+
+    img {
+      width: 400px;
+      max-width: 80vw;
+    }
+
+    ul#homepage_menu {
+      margin: 0;
+      padding: 0 1em;
+      margin-top: 10em;
+      list-style: none;
+
+      text-shadow: 2px 2px 10px black;
+
+      li {
+        margin: 0;
+        padding: 0;
+        display: inline;
+
+        a {
+          font-size: 1.5em;
+          text-transform: uppercase;
+          color: white;
+          text-decoration: none;
+          margin: 0.25em;
+        }
+        a:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+
+
+
 button.hamburger {
   position: absolute;
   z-index: 1;
@@ -59,16 +113,12 @@ ul#menu {
 }
 
 
-html, body {
-  margin: 0;
-  padding: 2%;
-}
-
 body {
   background-color: $yellow;
   background-size: 250px;
   font-family: Bariol, sans-serif;
   transition: 1s;
+  padding: 4%;
 }
 
 main {

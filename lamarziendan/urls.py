@@ -15,7 +15,7 @@ def latest_edition(request):
         raise Http404
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
-    path('', latest_edition),
+    path('', HomePageView.as_view(), name='homepage'),
     path('edities/', latest_edition),
     path('edities/<slug:slug>/', EditionView.as_view(), name='edition'),
     path('artiesten/<slug:slug>/', ArtistView.as_view(), name='artist'),

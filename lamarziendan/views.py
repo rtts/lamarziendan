@@ -28,6 +28,9 @@ class PageView(MenuMixin, DetailView):
     model = Page
     template_name = 'page.html'
 
+class HomePageView(MenuMixin, TemplateView):
+    template_name = 'homepage.html'
+
 class SignupView(FormView):
     template_name = 'signup.html'
     form_class = SignupForm

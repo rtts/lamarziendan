@@ -1,0 +1,493 @@
+$yellow: #fdfbbf;
+$yellowD: #f9ef22;
+$pink: #eb4072;
+$blue: #343677;
+$small: 500px;
+$medium: 800px;
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body.homepage {
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+
+  article {
+    margin: auto;
+
+    img {
+      width: 400px;
+      max-width: 80vw;
+    }
+
+    ul#homepage_menu {
+      margin: 0;
+      padding: 0 1em;
+      margin-top: 10em;
+      list-style: none;
+
+      text-shadow: 2px 2px 10px black;
+
+      li {
+        margin: 0;
+        padding: 0;
+        display: inline;
+
+        a {
+          font-size: 1.5em;
+          text-transform: uppercase;
+          color: white;
+          text-decoration: none;
+          margin: 0.25em;
+        }
+        a:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+button.hamburger {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    background: $pink !important;
+  }
+  &.is-active {
+    position: fixed;
+  }
+  &:hover {
+    opacity: 1 !important;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+ul#menu {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  padding-top: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  list-style: none;
+
+  li {
+    padding: 1em;
+    margin: 0 1em;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.5;
+    text-align: center;
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 34px;
+    }
+  }
+
+  transition: .5s ease;
+  transform: translatex(100%);
+  &.visible {
+    transform: translatex(0);
+  }
+}
+
+
+body {
+  background-color: $yellow;
+  background-size: 250px;
+  font-family: Bariol, sans-serif;
+  transition: 1s;
+  padding: 4%;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+footer {
+  opacity: 0.5;
+  padding-top: 50px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  max-width: 1000px;
+  margin: auto;
+  clear: both;
+}
+
+div.spacer {
+  height: 50px;
+}
+
+header {
+  text-align: center;
+
+  img {
+    width: 300px;
+    max-width: 100%;
+  }
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-align: center;
+  margin: 1em 0;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  color: $blue;
+  font-size: 56px;
+  line-height: 1;
+}
+
+section.description {
+  max-width: 700px;
+  margin: auto;
+  padding: 1em;
+  font-size: 20px;
+
+  h1, h2, h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $pink;
+  }
+}
+
+section.edition {
+  text-align: center;
+  position: relative;
+
+  h1 {
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 36px;
+    color: $blue;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+    padding: 0 40px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    span.shrunk {
+      display: block;
+      transform: scale(0.8, 1);
+      overflow-wrap: break-word;
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      &.previous {
+        left: -3vw;
+      }
+      &.next {
+        right: -3vw;
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }
+
+  h2 {
+    overflow-wrap: break-word;
+    text-transform: uppercase;
+    position: absolute;
+    color: $yellowD;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    font-size: 36px;
+  }
+
+
+  > img {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 7px solid $pink;
+    border-radius: 5px;
+  }
+}
+
+section.artist {
+  background: white;
+  border: 7px solid $yellowD;
+  margin: 50px 0;
+  padding: 10px;
+  font-size: 20px;
+
+  > div {
+    max-width: 700px;
+    margin: auto;
+
+    h1 {
+      text-align: center;
+      line-height: 1;
+      font-size: 36px;
+      color: $pink;
+      text-transform: uppercase;
+      margin: 0;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      overflow-wrap: break-word;
+    }
+
+    > img {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    img.portrait {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    div.website {
+      margin: 30px;
+      text-align: center;
+
+      a {
+        font-size: 22px;
+        color: $pink;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+
+    div.socialmedia {
+      text-align: center;
+      margin: 30px 0;
+      img {
+        margin: 2px;
+        background: $pink;
+        border-radius: 6px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+section.performances {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  margin-top: 10px;
+
+  a {
+    text-decoration: none;
+  }
+
+  > div {
+    flex: 1 1 200px;
+    overflow: hidden;
+
+    div.performance {
+      margin: 10px;
+      height: 320px;
+      background-color: white;
+
+      div.image {
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+      }
+
+      div.title {
+        padding: 10px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+
+        h1, h2 {
+          margin: 0;
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 24px;
+          margin-bottom: 5px;
+          color: $pink;
+        }
+        h2 {
+          margin: 0;
+          font-size: 18px;
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+section.participations {
+  h2 {
+    font-size: 36px;
+    a {
+      color: $blue;
+    }
+  }
+}
+
+table {
+  th {
+    text-align: right;
+    font-weight: normal;
+  }
+}
+
+form.auth_form {
+  display: inline-block;
+  border: 7px solid $pink;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+article.page {
+  section {
+    max-width: 700px;
+    margin: auto;
+    padding: 1em;
+    font-size: 20px;
+
+    h1, h2, h3 {
+      font-size: 30px;
+      font-weight: bold;
+      color: $pink;
+    }
+
+    div {
+      margin: 2em 0;
+    }
+
+    div.photo {
+      img {
+        display: block;
+        width: 100%;
+        margin: auto;
+      }
+    }
+
+    div.video {
+      div.iframe {
+        width: 100%;
+        padding-bottom: 56%;
+        position: relative;
+
+        iframe {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+form.contactform {
+  table {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 4.75em solid transparent;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 2px;
+    }
+    th {
+      width: 6em;
+      text-align: right;
+      font-weight: 400;
+      font-size: 0.8em;
+      padding-right: 5px;
+    }
+    @media (max-width: $small) {
+      border: none;
+      position:relative;
+      left: -0.5em;
+    }
+  }
+
+  ul.errorlist {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: red;
+      font-weight: 400;
+      font-size: 0.8em;
+    }
+  }
+
+  input[type=text], input[type=email], textarea {
+    width: 100%;
+    font-size: 1em;
+    border: none;
+    padding-left: 4px;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  textarea {
+    height: 10em;
+  }
+  input[type=submit] {
+    margin-bottom: 0.5em;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input, textarea {
+    border-radius: 3px;
+  }
+}
+
+@font-face {
+  font-family: 'Bariol';
+  src: url('bariol_regular-webfont.eot');
+  src: url('bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('bariol_regular-webfont.woff2') format('woff2'),
+       url('bariol_regular-webfont.woff') format('woff'),
+       url('bariol_regular-webfont.ttf') format('truetype'),
+       url('bariol_regular-webfont.svg#bariolregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
