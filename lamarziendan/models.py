@@ -39,7 +39,7 @@ class TeamMember(models.Model):
     slug = models.SlugField('URL', unique=True, null=True)
     description = RichTextField('beschrijving', blank=True)
     image = models.ImageField('afbeelding', blank=True)
-    links = models.TextField('social media links', help_text='Plak hier per regel één hyperlink', blank=True)
+    links = models.TextField('social media links', help_text='Plak hier per regel één hyperlink (inclusief http(s)://)', blank=True)
 
     def get_absolute_url(self):
         if self.slug:

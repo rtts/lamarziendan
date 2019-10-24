@@ -73,7 +73,10 @@ class TeamView(MenuMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         team_member = self.object
+        websites = team_member.links.split('\n')
+
         context.update({
             'team_member': team_member,
+            'websites': websites,
         })
         return context

@@ -12,15 +12,20 @@
         <img class="portrait" draggable="false" ondragstart="return false" src="{{team_member.image.url}}" alt="{{team_member.name}}">
       {% endif %}
 
-      <div class="website">
-        <a href="http://www.{{team_member.slug}}.nl/">www.{{team_member.slug}}.nl</a>
-      </div>
+      {% for website in websites %}
+        <div class="website">
+          <a href="{{website}}">{{website}}</a>
+        </div>
+      {% endfor %}
+
+      {% comment %}
       <div class="socialmedia">
         <a href="https://www.instagram.com/"><img src="{% static 'instagram.svg' %}"></a>
         <a href="https://twitter.com/"><img src="{% static 'twitter.svg' %}"></a>
         <a href="https://www.facebook.com/"><img src="{% static 'facebook.svg' %}"></a>
         <a href="https://www.linkedin.com/"><img src="{% static 'linkedin.svg' %}"></a>
       </div>
+      {% endcomment %}
     </div>
   </section>
 
