@@ -120,6 +120,7 @@ SECTION_TYPES = [
     ('normal', 'Normaal'),
     ('banner', 'Banner'),
     ('contact', 'Contactformulier'),
+    ('live', 'Live'),
 ]
 class Section(NumberedModel):
     page = models.ForeignKey(Page, verbose_name='pagina', related_name='sections', on_delete=models.CASCADE)

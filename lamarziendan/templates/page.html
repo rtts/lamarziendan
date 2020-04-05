@@ -63,6 +63,14 @@
               </tr>
             </table>
           </form>
+
+        {% elif section.type == 'live' %}
+          <div class="video">
+            <div class="iframe">
+              <iframe frameborder="0" allowfullscreen src="{{section.hyperlink}}"></iframe>
+            </div>
+          </div>
+
         {% endif %}
       </section>
     {% endfor %}
