@@ -43,26 +43,18 @@
         {% endif %}
 
         {% if section.type == 'contact' %}
-          <form action="https://inquire.rtts.eu" method="post" class="contactform">
-            <input type="hidden" name="subject" value="Lamarziendan Contactformulier">
-            <input type="hidden" name="redirect" value="https://www.lamarziendan.nl/thanks/">
-            <input type="hidden" name="to" value="info@lamarziendan.nl">
-            <table>
-              <tr><th><label for="id_sender">Email:</label></th><td><input id="id_sender" name="reply_to" type="email" required></td></tr>
-              <tr><th><label for="id_message">Bericht:</label></th><td>
-                <textarea cols="40" id="id_message" name="get_off_my_lawn" rows="10" required></textarea>
-                <textarea cols="40" id="id_message" name="message" rows="10" style="display:none"></textarea>
-              </td></tr>
-              <tr>
-                <td></td><td>
-                  <button type="submit">Verzenden</button><br>
-                  <small>
-                    (Dit bericht wordt verstuurd naar <a href="mailto:info@lamarziendan.nl">info@lamarziendan.nl</a>)
-                  </small>
-                </td>
-              </tr>
-            </table>
+          <form class="contactform" id="contactform">
+            <textarea cols="40" id="message" rows="10"></textarea>
+            <button type="submit">{{section.button}}</button><br>
           </form>
+
+          <script>
+              document.getElementById('contactform').addEventListener('submit', (event) => {
+                  event.preventDefault();
+                  const body = encodeURIComponent(document.getElementById('message').value);
+                  window.location.href = `mailto:info@lamarziendan.nl?subject=Lamarziendan%20Contactformulier&body=${body}`;
+              });
+          </script>
 
         {% elif section.type == 'live' %}
           <div class="video">

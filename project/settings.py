@@ -23,6 +23,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = '/srv/lamarziendan/media'
 SASS_PROCESSOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(lamarziendan.__file__)), 'static')
 LOGIN_REDIRECT_URL = '/admin/'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INSTALLED_APPS = [
     'lamarziendan',

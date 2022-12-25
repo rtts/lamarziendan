@@ -326,7 +326,6 @@ form.contactform table {
       border: none;
       position: relative;
       left: -0.5em; } }
-
 form.contactform ul.errorlist {
   display: inline;
   margin: 0;
@@ -367,4 +366,4 @@ form.contactform input, form.contactform textarea {
   font-weight: normal;
   font-style: normal; }
 
-/*# sourceMappingURL=../../../../../../static/main5.css.map */
+/*# sourceMappingURL=main5.css.map */
