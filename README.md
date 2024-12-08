@@ -1,6 +1,6 @@
 # Lamarziendan
 
-Lamarziendan was a series of popup art performances in various
+Lamarziendan was a series of pop up art performances in various
 locations in ’s-Hertogenbosch. This repository contains the source
 code for its website, as well as an archived copy that can be viewed
 on https://lamarziendan.created.today/
