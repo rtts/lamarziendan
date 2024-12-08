@@ -1,0 +1,366 @@
+body, html {
+  margin: 0;
+  padding: 0; }
+
+body.homepage {
+  background-color: black !important;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex; }
+  body.homepage article {
+    margin: auto; }
+    body.homepage article img {
+      width: 400px;
+      max-width: 80vw; }
+    body.homepage article ul#homepage_menu {
+      margin: 0;
+      padding: 0 1em;
+      margin-top: 10em;
+      list-style: none;
+      text-shadow: 2px 2px 10px black; }
+      body.homepage article ul#homepage_menu li {
+        margin: 0;
+        padding: 0;
+        display: inline; }
+        body.homepage article ul#homepage_menu li a {
+          font-size: 1.5em;
+          text-transform: uppercase;
+          color: white;
+          text-decoration: none;
+          margin: 0.25em; }
+        body.homepage article ul#homepage_menu li a:hover {
+          color: #eb4072; }
+
+button.hamburger {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0; }
+  button.hamburger .hamburger-inner, button.hamburger .hamburger-inner:before, button.hamburger .hamburger-inner:after {
+    background: #eb4072 !important; }
+  button.hamburger.is-active {
+    position: fixed; }
+  button.hamburger:hover {
+    opacity: 1 !important; }
+  button.hamburger:focus {
+    outline: none !important; }
+
+ul#menu {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  padding-top: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  list-style: none;
+  transition: .5s ease;
+  transform: translatex(100%); }
+  ul#menu li {
+    padding: 1em;
+    margin: 0 1em;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.5;
+    text-align: center; }
+    ul#menu li a {
+      color: black;
+      text-decoration: none;
+      font-size: 34px; }
+  ul#menu.visible {
+    transform: translatex(0); }
+
+body {
+  background-color: #fdfbbf;
+  background-size: 250px;
+  font-family: Bariol, sans-serif;
+  transition: 1s;
+  padding: 4%; }
+
+main {
+  max-width: 1000px;
+  margin: auto; }
+
+footer {
+  opacity: 0.5;
+  padding-top: 50px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  max-width: 1000px;
+  margin: auto;
+  clear: both; }
+
+div.spacer {
+  height: 50px; }
+
+header {
+  text-align: center; }
+  header img {
+    width: 300px;
+    max-width: 100%; }
+
+h1, h2 {
+  font-weight: normal;
+  text-align: center;
+  margin: 1em 0;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  color: #343677;
+  font-size: 56px;
+  line-height: 1; }
+
+section.description {
+  background: white;
+  margin: auto;
+  padding: 1em;
+  font-size: 20px; }
+  section.description p {
+    max-width: 800px; }
+  section.description h1, section.description h2, section.description h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #eb4072; }
+  section.description a {
+    text-decoration: underline;
+    color: #343677; }
+
+section.edition {
+  text-align: center;
+  position: relative; }
+  section.edition h1 {
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 36px;
+    color: #343677;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+    padding: 0 40px;
+    max-width: 100%;
+    box-sizing: border-box; }
+    section.edition h1 span.shrunk {
+      display: block;
+      transform: scale(0.8, 1);
+      overflow-wrap: break-word; }
+    section.edition h1 a {
+      position: absolute;
+      top: 0; }
+      section.edition h1 a.previous {
+        left: -3vw; }
+      section.edition h1 a.next {
+        right: -3vw; }
+      section.edition h1 a img {
+        width: 80px; }
+  section.edition h2 {
+    overflow-wrap: break-word;
+    text-transform: uppercase;
+    position: absolute;
+    color: #f9ef22;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    font-size: 36px; }
+  section.edition > img {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 7px solid #eb4072;
+    border-radius: 5px; }
+
+section.artist {
+  background: white;
+  border: 7px solid #f9ef22;
+  margin: 50px 0;
+  padding: 10px;
+  font-size: 20px; }
+  section.artist > div {
+    max-width: 700px;
+    margin: auto; }
+    section.artist > div h1 {
+      text-align: center;
+      line-height: 1;
+      font-size: 36px;
+      color: #eb4072;
+      text-transform: uppercase;
+      margin: 0;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      overflow-wrap: break-word; }
+    section.artist > div > img {
+      display: block;
+      width: 100%;
+      margin: 10px 0; }
+    section.artist > div img.portrait {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
+    section.artist > div div.website {
+      margin: 30px;
+      text-align: center; }
+      section.artist > div div.website a {
+        font-size: 22px;
+        color: #eb4072;
+        text-decoration: none;
+        text-transform: uppercase; }
+    section.artist > div div.socialmedia {
+      text-align: center;
+      margin: 30px 0; }
+      section.artist > div div.socialmedia img {
+        margin: 2px;
+        background: #eb4072;
+        border-radius: 6px;
+        width: 50px; }
+
+section.performances {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  section.performances a {
+    text-decoration: none; }
+  section.performances > div {
+    flex: 1 1 200px;
+    overflow: hidden; }
+    section.performances > div div.performance {
+      margin: 10px;
+      height: 320px;
+      background-color: white; }
+      section.performances > div div.performance div.image {
+        height: 200px;
+        background-position: center;
+        background-size: cover; }
+      section.performances > div div.performance div.title {
+        padding: 10px;
+        box-sizing: border-box;
+        text-transform: uppercase; }
+        section.performances > div div.performance div.title h1, section.performances > div div.performance div.title h2 {
+          margin: 0;
+          text-align: left; }
+        section.performances > div div.performance div.title h1 {
+          font-size: 24px;
+          margin-bottom: 5px;
+          color: #eb4072; }
+        section.performances > div div.performance div.title h2 {
+          margin: 0;
+          font-size: 18px;
+          color: #343677; }
+
+section.participations h2 {
+  font-size: 36px; }
+  section.participations h2 a {
+    color: #343677; }
+
+table th {
+  text-align: right;
+  font-weight: normal; }
+
+form.auth_form {
+  display: inline-block;
+  border: 7px solid #eb4072;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px; }
+
+article.page section {
+  max-width: 700px;
+  margin: auto;
+  padding: 1em;
+  font-size: 20px; }
+  article.page section h1, article.page section h2, article.page section h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #eb4072; }
+  article.page section div {
+    margin: 2em 0; }
+  article.page section div.photo img {
+    display: block;
+    width: 100%;
+    margin: auto; }
+  article.page section div.video div.iframe {
+    width: 100%;
+    padding-bottom: 56%;
+    position: relative; }
+    article.page section div.video div.iframe iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+
+form.contactform table {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border-right: 4.75em solid transparent;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%; }
+  form.contactform table th, form.contactform table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 2px; }
+  form.contactform table th {
+    width: 6em;
+    text-align: right;
+    font-weight: 400;
+    font-size: 0.8em;
+    padding-right: 5px; }
+  @media (max-width: 500px) {
+    form.contactform table {
+      border: none;
+      position: relative;
+      left: -0.5em; } }
+form.contactform ul.errorlist {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+  form.contactform ul.errorlist li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: red;
+    font-weight: 400;
+    font-size: 0.8em; }
+
+form.contactform input[type=text], form.contactform input[type=email], form.contactform textarea {
+  width: 100%;
+  font-size: 1em;
+  border: none;
+  padding-left: 4px;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2); }
+
+form.contactform textarea {
+  height: 10em; }
+
+form.contactform input[type=submit] {
+  margin-bottom: 0.5em;
+  padding: 5px 10px;
+  font-size: 0.8em; }
+  form.contactform input[type=submit]:hover {
+    cursor: pointer; }
+
+form.contactform input, form.contactform textarea {
+  border-radius: 3px; }
+
+@font-face {
+  font-family: 'Bariol';
+  src: url("bariol_regular-webfont.eot");
+  src: url("bariol_regular-webfont.eot%3F") format("embedded-opentype"), url("bariol_regular-webfont.woff2") format("woff2"), url("bariol_regular-webfont.woff") format("woff"), url("bariol_regular-webfont.ttf") format("truetype"), url("bariol_regular-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*# sourceMappingURL=homepage.css.map */

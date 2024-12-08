@@ -1,0 +1,128 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="NL">
+  <head>
+    <title>Lamarziendan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../static/main5.css">
+    <link rel="stylesheet" type="text/css" href="../../static/hamburgers.css">
+    <link rel="shortcut icon" href="../../static/favicon.png" type="image/x-icon">
+    
+  </head>
+  <body style="background-image: url('../../static/background.svg')">
+
+    <header>
+      <a href="../../index.html"><img draggable="false" ondragstart="return false" src="../../static/logo.svg" alt="Lamarziendan"></a>
+    </header>
+
+    <main id="main">
+      
+  <section class="artist">
+    <div>
+      <h1>
+        Marc van Creij
+      </h1>
+      <p>Tijdens de ondergrondse editie van LAMARZIENDAN bracht de&nbsp;mysterieuze stadsgids van Ghost Tours Den Bosch, een bezoek aan de Tramkade en vertelde hij een spookachtig verhaal wat zich in de vorige eeuw onder andere heeft afgespeeld&nbsp;bij de gebroeders Heus. Deze mysterieuze verschijning werd begeleid door de huisband die het verhaal ondersteunde met spannende muziek. De intieme sfeer die ontstond door dit bloedstollende verhaal was om te snijden!&nbsp;</p>
+      
+        <img draggable="false" ondragstart="return false" src="../../media/DB_Front.jpg" alt="Marc van Creij">
+      
+
+      <div class="website">
+        <a href="http://www.ghosttoursdenbosch.nl/">www.ghosttoursdenbosch.nl</a>
+      </div>
+      <div class="socialmedia">
+        <a href="https://www.instagram.com/"><img src="../../static/instagram.svg"></a>
+        <a href="https://twitter.com/"><img src="../../static/twitter.svg"></a>
+        <a href="https://www.facebook.com/"><img src="../../static/facebook.svg"></a>
+        <a href="https://www.linkedin.com/"><img src="../../static/linkedin.svg"></a>
+      </div>
+    </div>
+  </section>
+
+  <h1>te zien in:</h1>
+
+  
+    
+      <a href="../../edities/de-ondergrondse-editie/index.html">
+        <section class="edition">
+          <h2>#6 De ondergrondse editie</h2>
+          
+            <img draggable="false" ondragstart="return false" src="../../media/6.jpg" alt="Spannende actiefoto">
+          
+        </section>
+      </a>
+      <div class="spacer"></div>
+    
+  
+
+
+    </main>
+
+    <footer>
+      <p>Meer informatie of meedoen? Email naar&nbsp;<a href="mailto:info@lamarziendan.nl">info@lamarziendan.nl</a></p>
+
+<p>Copyright 2020&nbsp;Lamarziendan</p>
+
+<p><a href="../../admin/index.html">Lamarbeherendan</a></p>
+    </footer>
+
+    <button class="hamburger hamburger--collapse" id='hamburger'>
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <ul id="menu">
+      
+        
+          <li><a href="../../edities/index.html" >Editie-archief</a></li>
+        
+      
+        
+          <li><a href="../../posterieur/index.html" >Komende editie</a></li>
+        
+      
+        
+          <li><a href="../../about/index.html" >Over ons</a></li>
+        
+      
+        
+          <li><a href="../../contact/index.html" >Contact</a></li>
+        
+      
+        
+          <li><a href="../../live/index.html" >Lamarziendan LIVE</a></li>
+        
+      
+    </ul>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function(event) {
+          var hamburger = document.getElementById('hamburger');
+          var menu = document.getElementById('menu');
+          hamburger.addEventListener('click', function(e) {
+              hamburger.classList.toggle('is-active');
+              menu.classList.toggle('visible');
+          });
+
+          /* var links = document.querySelectorAll('a');
+           * for (var link of links) {
+           *     var a = new RegExp('/' + window.location.host + '/');
+           *     if (!a.test(link.href)) {
+           *         link.addEventListener('click', function(event) {
+           *             event.preventDefault();
+           *             event.stopPropagation();
+           *             window.open(this.href, '_blank');
+           *         });
+           *     }
+           * } */
+      });
+    </script>
+
+  </body>
+</html>
